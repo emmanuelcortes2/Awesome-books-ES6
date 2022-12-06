@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 export default class LocalStorage {
   static loadBooks() {
     let books;

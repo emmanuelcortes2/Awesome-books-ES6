@@ -1,5 +1,6 @@
 import Book from './modules/book.js';
 import LocalStorage, { Interface } from './modules/localStorage.js';
+import { DateTime } from './modules/luxon.js';
 
 document.addEventListener('DOMContentLoaded', Interface.booksDisplay);
 
@@ -76,9 +77,9 @@ gethome.addEventListener('click', (e) => {
 });
 
 function clock() {
-  const date = document.getElementById('date');
-  const dateToString = new Date().toLocaleString();
-  const dateFormat = dateToString.replace(', ', ' | ');
-  date.textContent = dateFormat;
+  const now = DateTime.now();
+  const date2 = document.getElementById('date');
+  date2.textContent = now.toLocaleString(DateTime.DATETIME_MED);
 }
+
 setInterval(clock, 1000);
